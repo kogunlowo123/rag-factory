@@ -1,0 +1,77 @@
+# RAG Factory — Pattern Catalog
+# Registry of patterns, strategies, and capabilities
+
+patterns:
+  rag-naive:
+    description: "Simple retrieve-and-generate. Single dense retriever, no reranking."
+    retrieval: [dense]
+    reranking: [none]
+    query: [passthrough]
+    complexity: low
+    use_when: "Prototyping, small corpora (<10K docs), low-stakes Q&A"
+
+  rag-hybrid:
+    description: "BM25 + dense with reciprocal rank fusion and cross-encoder reranking."
+    retrieval: [bm25, dense, hybrid]
+    reranking: [cross_encoder, llm_rerank]
+    query: [classify, rewrite]
+    complexity: medium
+    use_when: "Production workloads, mixed query types, accuracy matters"
+
+  rag-graph:
+    description: "Knowledge graph-enhanced retrieval with entity linking."
+    retrieval: [graph, dense, hybrid]
+    reranking: [cross_encoder, cascade]
+    query: [decompose, expand]
+    complexity: high
+    use_when: "Complex domain reasoning, multi-entity queries, compliance"
+
+  rag-multimodal:
+    description: "Text + image + table retrieval with modality-aware fusion."
+    retrieval: [dense, hybrid]
+    reranking: [llm_rerank]
+    query: [classify]
+    complexity: high
+    use_when: "Documents with mixed media (PDFs with charts, medical imaging)"
+
+  rag-agentic:
+    description: "Multi-hop reasoning with budget-aware planning and self-correction."
+    retrieval: [hybrid, graph]
+    reranking: [cascade]
+    query: [decompose, hyde]
+    multi_hop: [budget, planner, executor, synthesizer]
+    corrective: [self_critique, web_fallback]
+    complexity: very_high
+    use_when: "Research, legal analysis, complex technical Q&A, agentic workflows"
+
+strategies:
+  retrieval:
+    bm25: { module: "search/retrievers/bm25", status: implemented }
+    dense: { module: "search/retrievers/dense", status: implemented }
+    hybrid: { module: "search/retrievers/hybrid", status: implemented }
+    graph: { module: "search/retrievers/graph", status: implemented }
+    parent_doc: { module: "search/retrievers/parent_doc", status: implemented }
+
+  reranking:
+    cross_encoder: { module: "search/reranking/cross_encoder", status: implemented }
+    llm_rerank: { module: "search/reranking/llm_rerank", status: implemented }
+    boost: { module: "search/reranking/boost", status: implemented }
+    cascade: { module: "search/reranking/cascade", status: implemented }
+
+  query:
+    classify: { module: "search/query/classify", status: implemented }
+    rewrite: { module: "search/query/rewrite", status: implemented }
+    expand: { module: "search/query/expand", status: implemented }
+    hyde: { module: "search/query/hyde", status: implemented }
+    decompose: { module: "search/query/decompose", status: implemented }
+
+  cache:
+    exact: { module: "search/cache/exact", status: implemented }
+    semantic: { module: "search/cache/semantic", status: implemented }
+    redis: { module: "search/cache/redis", status: implemented }
+
+infrastructure:
+  vectorstores: [pgvector, opensearch-serverless, pinecone]
+  inference: [bedrock, azure-openai, openai, ollama]
+  object_stores: [s3, azure-blob, gcs]
+  clouds: [aws, azure, gcp]

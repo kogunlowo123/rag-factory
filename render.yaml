@@ -1,0 +1,23 @@
+# Render Blueprint — RAG Factory
+# Deploy: connect this repo to Render, it auto-discovers this file
+
+services:
+  - type: web
+    name: citadel-rag-factory
+    runtime: docker
+    dockerfilePath: platform/reference-apps/reference-agentic-rag/Dockerfile
+    dockerContext: platform/reference-apps/reference-agentic-rag
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: LOG_LEVEL
+        value: info
+
+  - type: web
+    name: citadel-rag-factory-docs
+    runtime: static
+    buildCommand: echo "Static docs"
+    staticPublishPath: docs
+    plan: free
