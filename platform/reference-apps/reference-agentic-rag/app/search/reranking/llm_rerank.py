@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import json
 
-from ..ports import CompletionPort
 from ...contracts import SearchResult
+from ..ports import CompletionPort
 
 _RERANK_PROMPT = """Score each document's relevance to the query on a scale of 0-10.
 Return ONLY a JSON array of objects: [{{"index": 0, "score": 8.5}}, ...]

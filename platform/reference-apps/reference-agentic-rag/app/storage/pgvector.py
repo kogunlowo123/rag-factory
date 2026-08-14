@@ -5,8 +5,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
-from ..search.ports import VectorStorePort
-
 
 @dataclass(frozen=True)
 class PgVectorConfig:

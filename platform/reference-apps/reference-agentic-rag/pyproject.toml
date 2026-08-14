@@ -24,7 +24,13 @@ embedding = ["sentence-transformers>=3.0"]
 reranking = ["sentence-transformers>=3.0"]
 cache = ["redis>=5.0"]
 local = ["ollama>=0.3"]
-dev = ["pytest>=8.0", "pytest-asyncio>=0.24", "ruff>=0.8", "mypy>=1.13"]
+# ruff is upper-bounded on purpose. It is a verification gate (project.yaml
+# verify.t1_static), and an unbounded pin means a new ruff minor can add a rule
+# that turns the gate red with no code change -- which is exactly what happened
+# on 2026-08-14: ruff 0.15.22 introduced UP042 and T1 failed against code that
+# had not been touched. A gate whose result depends on the day you run it is not
+# a gate. Raise the ceiling deliberately, with the lint fixes in the same commit.
+dev = ["pytest>=8.0", "pytest-asyncio>=0.24", "ruff>=0.8,<0.16", "mypy>=1.13"]
 
 [tool.ruff]
 target-version = "py312"

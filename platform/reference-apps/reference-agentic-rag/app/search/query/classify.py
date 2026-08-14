@@ -3,10 +3,10 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from enum import Enum
+from enum import StrEnum
 
-from ..ports import CompletionPort
 from ...contracts import RetrievalStrategy
+from ..ports import CompletionPort
 
 _CLASSIFY_PROMPT = """Classify this search query into ONE category:
 - FACTUAL: simple fact lookup ("What is EC2?")
@@ -20,7 +20,7 @@ Query: {query}
 Return ONLY the category name, nothing else."""
 
 
-class QueryType(str, Enum):
+class QueryType(StrEnum):
     FACTUAL = "FACTUAL"
     ANALYTICAL = "ANALYTICAL"
     PROCEDURAL = "PROCEDURAL"

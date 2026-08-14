@@ -9,14 +9,6 @@ from __future__ import annotations
 import time
 from dataclasses import replace
 
-from ..ports import (
-    CachePort,
-    CompletionPort,
-    EmbeddingPort,
-    KeywordSearchPort,
-    RerankerPort,
-    VectorStorePort,
-)
 from ...contracts import (
     CacheStrategy,
     QueryStrategy,
@@ -25,6 +17,14 @@ from ...contracts import (
     SearchRequest,
     SearchResponse,
     SearchResult,
+)
+from ..ports import (
+    CachePort,
+    CompletionPort,
+    EmbeddingPort,
+    KeywordSearchPort,
+    RerankerPort,
+    VectorStorePort,
 )
 
 

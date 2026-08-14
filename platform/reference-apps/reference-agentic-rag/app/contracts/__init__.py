@@ -3,11 +3,11 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from enum import Enum
+from enum import StrEnum
 from typing import Any
 
 
-class RetrievalStrategy(str, Enum):
+class RetrievalStrategy(StrEnum):
     """Supported retrieval strategies."""
     BM25 = "bm25"
     DENSE = "dense"
@@ -16,7 +16,7 @@ class RetrievalStrategy(str, Enum):
     PARENT_DOC = "parent_doc"
 
 
-class RerankStrategy(str, Enum):
+class RerankStrategy(StrEnum):
     """Supported reranking strategies."""
     CROSS_ENCODER = "cross_encoder"
     LLM_RERANK = "llm_rerank"
@@ -25,7 +25,7 @@ class RerankStrategy(str, Enum):
     NONE = "none"
 
 
-class QueryStrategy(str, Enum):
+class QueryStrategy(StrEnum):
     """Query preprocessing strategies."""
     PASSTHROUGH = "passthrough"
     CLASSIFY = "classify"
@@ -35,7 +35,7 @@ class QueryStrategy(str, Enum):
     DECOMPOSE = "decompose"
 
 
-class CacheStrategy(str, Enum):
+class CacheStrategy(StrEnum):
     """Cache strategies."""
     NONE = "none"
     EXACT = "exact"

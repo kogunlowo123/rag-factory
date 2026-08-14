@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from ..ports import RerankerPort
 from ...contracts import SearchResult
+from ..ports import RerankerPort
 
 
 class CrossEncoderReranker:
