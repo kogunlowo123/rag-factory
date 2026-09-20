@@ -53,3 +53,31 @@ Modules implement cloud-free contracts. Blueprints compose contracts, never modu
 ## License
 
 MIT
+
+<!-- project-structure -->
+## Project structure
+
+```text
+├── blueprints/
+│   └── rag-hybrid/
+├── docs/
+│   ├── adr/
+│   └── PRD.md
+├── factory/
+│   ├── catalog.yaml
+│   └── scaffold.sh
+├── modules/
+│   └── contracts/
+├── platform/
+│   └── reference-apps/
+├── policy/
+│   └── opa/
+├── .gitignore
+├── README.md
+└── render.yaml
+```
+
+<!-- architecture -->
+## Architecture
+
+![Architecture diagram](docs/architecture.svg)

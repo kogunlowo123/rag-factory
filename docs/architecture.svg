@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 888 352" width="888" height="352" role="img" aria-label="rag-factory architecture">
+<title>rag-factory architecture</title>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#64748b"/></marker></defs>
+<rect width="888" height="352" fill="#ffffff"/>
+<text x="24" y="34" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" fill="#0f172a">rag-factory</text>
+<text x="24" y="56" font-family="Segoe UI,Arial,sans-serif" font-size="13" fill="#475569">Top-level components. Stack: Python, Terraform. Generated from the repository layout.</text>
+<rect x="24" y="80" width="270" height="108" rx="8" fill="#f1f5f9" stroke="#94a3b8"/>
+<text x="38" y="104" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="600" fill="#0f172a">platform/</text>
+<text x="38" y="126" font-family="Consolas,monospace" font-size="12" fill="#334155">47 files</text>
+<text x="38" y="144" font-family="Consolas,monospace" font-size="12" fill="#334155">reference-apps</text>
+<rect x="312" y="80" width="270" height="108" rx="8" fill="#f1f5f9" stroke="#94a3b8"/>
+<text x="326" y="104" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="600" fill="#0f172a">blueprints/</text>
+<text x="326" y="126" font-family="Consolas,monospace" font-size="12" fill="#334155">4 files</text>
+<text x="326" y="144" font-family="Consolas,monospace" font-size="12" fill="#334155">rag-hybrid</text>
+<rect x="600" y="80" width="270" height="108" rx="8" fill="#f1f5f9" stroke="#94a3b8"/>
+<text x="614" y="104" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="600" fill="#0f172a">modules/</text>
+<text x="614" y="126" font-family="Consolas,monospace" font-size="12" fill="#334155">4 files</text>
+<text x="614" y="144" font-family="Consolas,monospace" font-size="12" fill="#334155">contracts</text>
+<rect x="24" y="206" width="270" height="108" rx="8" fill="#f1f5f9" stroke="#94a3b8"/>
+<text x="38" y="230" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="600" fill="#0f172a">docs/</text>
+<text x="38" y="252" font-family="Consolas,monospace" font-size="12" fill="#334155">2 files</text>
+<text x="38" y="270" font-family="Consolas,monospace" font-size="12" fill="#334155">PRD.md</text>
+<text x="38" y="288" font-family="Consolas,monospace" font-size="12" fill="#334155">adr</text>
+<rect x="312" y="206" width="270" height="108" rx="8" fill="#f1f5f9" stroke="#94a3b8"/>
+<text x="326" y="230" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="600" fill="#0f172a">factory/</text>
+<text x="326" y="252" font-family="Consolas,monospace" font-size="12" fill="#334155">2 files</text>
+<text x="326" y="270" font-family="Consolas,monospace" font-size="12" fill="#334155">catalog.yaml</text>
+<text x="326" y="288" font-family="Consolas,monospace" font-size="12" fill="#334155">scaffold.sh</text>
+<rect x="600" y="206" width="270" height="108" rx="8" fill="#f1f5f9" stroke="#94a3b8"/>
+<text x="614" y="230" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="600" fill="#0f172a">policy/</text>
+<text x="614" y="252" font-family="Consolas,monospace" font-size="12" fill="#334155">1 files</text>
+<text x="614" y="270" font-family="Consolas,monospace" font-size="12" fill="#334155">opa</text>
+</svg>
